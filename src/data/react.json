@@ -1,0 +1,54 @@
+{
+	"id": "reactjs",
+	"title": "React JS",
+	"slug": "reactjs-cheat-sheet",
+	"description": "ফ্রন্ট-এন্ড ওয়েব ডেভেলপমেন্ট এর এক যুগান্তকারী টুলস এর নাম রিয়েক্ট জেএস। এটি একটি ইন্টারেক্টিভ ইউজার ইন্টারফেস (UI) ভিত্তিক জাভাস্ক্রিপ্ট লাইব্রেরী।",
+	"colorPref": "#0288d1",
+	"contents": [
+		{
+			"items": [
+				{
+					"question": "React কী এবং কেন ব্যবহার করা হয়?",
+					"answer": "React একটি JavaScript লাইব্রেরি যা ইউজার ইন্টারফেস তৈরির জন্য ব্যবহৃত হয়। এটি component-based architecture ব্যবহার করে, ফলে কোড পুনঃব্যবহার সহজ হয় এবং বড় অ্যাপ দ্রুত রেন্ডার হয়।"
+				},
+				{
+					"question": "Virtual DOM কী?",
+					"answer": "Virtual DOM হলো আসল DOM-এর হালকা কপি। React যখন ডেটা পরিবর্তন করে, তখন সরাসরি আসল DOM পরিবর্তন না করে প্রথমে Virtual DOM আপডেট করে, এরপর শুধু পার্থক্য অনুযায়ী আসল DOM আপডেট করে। এতে অ্যাপ দ্রুত চলে।"
+				},
+				{
+					"question": "JSX কী এবং কেন দরকার?",
+					"answer": "JSX হলো JavaScript XML সিনট্যাক্স, যা JavaScript কোডের ভিতরে HTML-সদৃশ কোড লিখতে দেয়। এটি readability বাড়ায় এবং কম্পোনেন্ট তৈরি করা সহজ করে।"
+				},
+				{
+					"question": "Functional ও Class Component এর পার্থক্য কী?",
+					"answer": "Functional Component সাধারণ ফাংশন আকারে লেখা, হুক ব্যবহার করে স্টেট ম্যানেজ করে। Class Component ES6 class দিয়ে তৈরি, this কীওয়ার্ড ও লাইফসাইকেল মেথড ব্যবহার করতে হয়। আজকাল বেশিরভাগ ক্ষেত্রে Functional Component বেশি জনপ্রিয়।"
+				},
+				{
+					"question": "Props ও State এর মধ্যে পার্থক্য কী?",
+					"answer": "Props প্যারেন্ট থেকে চাইল্ডে ডেটা পাঠানোর জন্য ব্যবহৃত, এটি read-only। State কম্পোনেন্টের নিজস্ব ডেটা, যা কম্পোনেন্টের ভেতর থেকে আপডেট করা যায়।"
+				},
+				{
+					"question": "React Hooks কী?",
+					"answer": "Hooks হলো বিশেষ ফাংশন যা Functional Component-এ স্টেট ও লাইফসাইকেল ফিচার ব্যবহার করতে দেয়। যেমন: useState, useEffect।"
+				},
+				{
+					"question": "useEffect হুক কীভাবে কাজ করে?",
+					"answer": "useEffect ফাংশন কম্পোনেন্টে সাইড ইফেক্ট যেমন API কল, ইভেন্ট সাবস্ক্রিপশন, ডকুমেন্ট টাইটেল পরিবর্তন ইত্যাদি করতে ব্যবহৃত হয়।",
+          "code": "useEffect(() => {\n  // সাইড ইফেক্ট কোড এখানে\n}, [dependencies]);"
+				},
+				{
+					"question": "React Router কী?",
+					"answer": "React Router একটি লাইব্রেরি যা Single Page Application-এ পেজ নেভিগেশন করতে সাহায্য করে, ব্রাউজার রিফ্রেশ ছাড়াই URL পরিবর্তন করে বিভিন্ন কম্পোনেন্ট দেখানো যায়।"
+				},
+				{
+					"question": "Redux বা Context API কেন ব্যবহার করা হয়?",
+					"answer": "বড় অ্যাপে অনেক কম্পোনেন্টের মধ্যে ডেটা শেয়ার করতে হলে prop-drilling এড়ানোর জন্য Redux বা Context API ব্যবহার করা হয়। Redux হলো একটি predictable state container। Context API React-এর বিল্ট-ইন ফিচার।"
+				},
+				{
+					"question": "React Performance অপটিমাইজ করার উপায় কী?",
+					"answer": "React.memo ব্যবহার করে অপ্রয়োজনীয় রি-রেন্ডার আটকানো, Lazy Loading ও Code Splitting, useCallback ও useMemo হুক, Virtualized List ব্যবহার।"
+				}
+			]
+		}
+	]
+}
