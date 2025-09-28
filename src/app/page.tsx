@@ -1,6 +1,9 @@
+
 'use client';
 
+import { useState, useCallback } from 'react';
 import Header from '@/components/Header';
+import SearchBar from '@/components/SearchBar';
 import Image from 'next/image';
 import Link from 'next/link';
 import { technologies } from '@/data/technologies';
@@ -14,6 +17,12 @@ import { technologies } from '@/data/technologies';
 // }
 
 export default function ReactHome() {
+	const [filteredTechnologies, setFilteredTechnologies] = useState(technologies);
+
+	const handleFilter = useCallback((filteredTechs: typeof technologies) => {
+		setFilteredTechnologies(filteredTechs);
+	}, []);
+
 	return (
 		<div className='bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen'>
 			<div className='container mx-auto font-sans min-h-screen'>
@@ -24,19 +33,36 @@ export default function ReactHome() {
 							<h2 className='text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white'>
 								Choose Your Technology
 							</h2>
-							<div className='flex flex-wrap gap-3 justify-center'>
-								{technologies.map((tech, index) => (
+							<SearchBar technologies={technologies} onFilter={handleFilter} />
+							{filteredTechnologies.length === 0 ? (
+								<div className="text-center py-12">
+									<p className="text-gray-500 dark:text-gray-400 text-lg">
+										No technologies found matching your search.
+									</p>
+								</div>
+							) : (
+								<div className='flex flex-wrap gap-4 justify-center'>
+									{filteredTechnologies.map((tech, index) => (
 									<Link key={tech.name} href={tech.href}>
 										<button
-											className={`${tech.bgColor} ${tech.textColor} px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+											className={`${tech.bgColor} ${tech.textColor} px-6 py-4 rounded-xl text-base font-bold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-y-1 transform focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-500 border-2 border-white/20 backdrop-blur-sm group relative overflow-hidden min-w-[140px]`}
 											style={{
 												animationDelay: `${index * 50}ms`,
 											}}>
-											{tech.name}
+											<div className="flex items-center justify-center gap-2">
+												<span className="text-xl group-hover:scale-125 transition-transform duration-300">
+													{tech.icon}
+												</span>
+												<span className="text-sm font-semibold">
+													{tech.name}
+												</span>
+											</div>
+											<div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 										</button>
 									</Link>
 								))}
-							</div>
+								</div>
+							)}
 						</div>
 					</main>
 					<footer className='row-start-3 flex gap-[24px] flex-wrap items-center justify-center'>

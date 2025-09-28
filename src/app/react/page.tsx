@@ -40,7 +40,7 @@ export default function Home() {
     const fetchContributors = async () => {
       try {
         // Replace with your actual GitHub repository
-        const response = await fetch('https://api.github.com/repos/yourusername/techinterview-handbook-bangla/contributors');
+        const response = await fetch('https://api.github.com/repos/aktaruzzamanjoti97/techinterview-handbook-bangla/contributors');
         if (response.ok) {
           const data = await response.json();
           setContributors(data.slice(0, 6)); // Show top 6 contributors
